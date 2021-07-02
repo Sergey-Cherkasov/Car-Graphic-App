@@ -1,18 +1,24 @@
 package com.example.cargraphicapp
 
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
 
-class DrawView(c: Context) : View(c) {
+class CarView : View {
+    private val paint = Paint()
+
+    constructor(c: Context) : super(c)
     constructor(c: Context, attrs: AttributeSet)
-            : this(c)
+            : super(c, attrs)
+
     constructor(c: Context, attrs: AttributeSet, defStyleAttr: Int)
-            : this(c, attrs)
+            : super(c, attrs, defStyleAttr)
 
     override fun onDraw(canvas: Canvas?) {
-        val paint: Paint = Paint()
         paint.style = Paint.Style.STROKE
         paint.color = Color.BLACK
         paint.strokeWidth = 2f
